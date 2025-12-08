@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Manages environment variables for simple_* libraries. Uses SIMPLE_ENV for environment access and SIMPLE_PROCESS for persistent settings."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>sst_env_manager Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="sst_env_manager_chart.html">Chart</a>
+<a class="nav class" href="sst_env_manager_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="sst_env_manager"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Manages environment variables for simple_* libraries.</span>
+		<span class="estring">Uses SIMPLE_ENV for environment access and SIMPLE_PROCESS for persistent settings.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../src/sst_env_manager_short.html">SST_ENV_MANAGER</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../src/sst_env_manager_short.html#f_make">make</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_last_error"></a><a class="efeature" href="../src/sst_env_manager_short.html#f_last_error">last_error</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Last error message</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Operations</span>
+
+	<a name="f_set_library_env"></a><a class="efeature" href="../src/sst_env_manager_short.html#f_set_library_env">set_library_env</a> <span class="esymbol">(</span><span class="elocal">a_lib</span><span class="esymbol">:</span> <a class="eclass" href="../src/sst_library_info_short.html">SST_LIBRARY_INFO</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set environment variable for a library</span>
+
+	<a name="f_get_library_env"></a><a class="efeature" href="../src/sst_env_manager_short.html#f_get_library_env">get_library_env</a> <span class="esymbol">(</span><span class="elocal">a_lib</span><span class="esymbol">:</span> <a class="eclass" href="../src/sst_library_info_short.html">SST_LIBRARY_INFO</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Get environment variable for a library (from current process)</span>
+
+	<a name="f_set_user_env_persistent"></a><a class="efeature" href="../src/sst_env_manager_short.html#f_set_user_env_persistent">set_user_env_persistent</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">,</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set a user-level environment variable (persistent across sessions)</span>
+
+	<a name="f_get_user_env_persistent"></a><a class="efeature" href="../src/sst_env_manager_short.html#f_get_user_env_persistent">get_user_env_persistent</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Get a user-level environment variable (from registry, not current process)</span>
+
+	<a name="f_remove_user_env_persistent"></a><a class="efeature" href="../src/sst_env_manager_short.html#f_remove_user_env_persistent">remove_user_env_persistent</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Remove a user-level environment variable</span>
+
+	<a name="f_set_all_library_envs"></a><a class="efeature" href="../src/sst_env_manager_short.html#f_set_all_library_envs">set_all_library_envs</a> <span class="esymbol">(</span><span class="elocal">a_manifest</span><span class="esymbol">:</span> <a class="eclass" href="../src/sst_manifest_short.html">SST_MANIFEST</a><span class="esymbol">;</span> <span class="elocal">a_install_dir</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set environment variables for all libraries</span>
+
+	<a name="f_generate_env_script"></a><a class="efeature" href="../src/sst_env_manager_short.html#f_generate_env_script">generate_env_script</a> <span class="esymbol">(</span><span class="elocal">a_manifest</span><span class="esymbol">:</span> <a class="eclass" href="../src/sst_manifest_short.html">SST_MANIFEST</a><span class="esymbol">;</span> <span class="elocal">a_install_dir</span><span class="esymbol">,</span> <span class="elocal">a_output</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Generate a batch script that sets all environment variables</span>
+
+	<a name="f_generate_powershell_script"></a><a class="efeature" href="../src/sst_env_manager_short.html#f_generate_powershell_script">generate_powershell_script</a> <span class="esymbol">(</span><span class="elocal">a_manifest</span><span class="esymbol">:</span> <a class="eclass" href="../src/sst_manifest_short.html">SST_MANIFEST</a><span class="esymbol">;</span> <span class="elocal">a_install_dir</span><span class="esymbol">,</span> <span class="elocal">a_output</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Generate a PowerShell script that sets all environment variables</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../src/sst_env_manager_short.html">SST_ENV_MANAGER</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="sst_env_manager_chart.html">Chart</a>
+<a class="nav class" href="sst_env_manager_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="sst_env_manager"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+
