@@ -1,0 +1,354 @@
+{
+  "name": "simple_ecosystem",
+  "version": "1.0.0",
+  "description": "Complete Eiffel library ecosystem for modern application development",
+  "author": "Larry Rix",
+  "github_org": "ljr1981",
+  "default_install_dir": "D:\\prod",
+  "libraries": [
+    {
+      "name": "simple_base64",
+      "description": "Base64 encoding and decoding",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_base64",
+      "dependencies": [],
+      "tags": ["base64", "encoding", "decoding"]
+    },
+    {
+      "name": "simple_hash",
+      "description": "SHA256, SHA1, MD5, HMAC hashing",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_hash",
+      "dependencies": [],
+      "tags": ["hash", "sha256", "sha1", "md5", "hmac", "crypto"]
+    },
+    {
+      "name": "simple_uuid",
+      "description": "UUID/GUID generation",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_uuid",
+      "dependencies": [],
+      "tags": ["uuid", "guid", "identifier"]
+    },
+    {
+      "name": "simple_randomizer",
+      "description": "Random data generation",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_randomizer",
+      "dependencies": [],
+      "tags": ["random", "generator"]
+    },
+    {
+      "name": "simple_json",
+      "description": "JSON parsing and building",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_json",
+      "dependencies": [],
+      "tags": ["json", "parser", "builder", "serialization"]
+    },
+    {
+      "name": "simple_xml",
+      "description": "XML parsing and building",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_xml",
+      "dependencies": [],
+      "tags": ["xml", "parser", "builder"]
+    },
+    {
+      "name": "simple_csv",
+      "description": "CSV parsing and generation",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_csv",
+      "dependencies": [],
+      "tags": ["csv", "parser", "tabular"]
+    },
+    {
+      "name": "simple_markdown",
+      "description": "Markdown to HTML conversion",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_markdown",
+      "dependencies": [],
+      "tags": ["markdown", "html", "parser"]
+    },
+    {
+      "name": "simple_datetime",
+      "description": "Date/time utilities and formatting",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_datetime",
+      "dependencies": [],
+      "tags": ["date", "time", "duration", "age", "calendar"]
+    },
+    {
+      "name": "simple_validation",
+      "description": "Fluent validation rules",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_validation",
+      "dependencies": [],
+      "tags": ["validation", "fluent", "rules"]
+    },
+    {
+      "name": "simple_regex",
+      "description": "Regular expression matching",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_regex",
+      "dependencies": [],
+      "tags": ["regex", "pattern", "matching"]
+    },
+    {
+      "name": "simple_process",
+      "description": "Shell command execution",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_process",
+      "dependencies": [],
+      "tags": ["process", "shell", "command", "execution"]
+    },
+    {
+      "name": "simple_logger",
+      "description": "Structured JSON logging",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_logger",
+      "dependencies": ["simple_json"],
+      "tags": ["logging", "structured", "json", "debug"]
+    },
+    {
+      "name": "simple_htmx",
+      "description": "HTMX HTML components",
+      "layer": "foundation",
+      "github": "https://github.com/ljr1981/simple_htmx",
+      "dependencies": [],
+      "tags": ["htmx", "html", "components", "web"]
+    },
+    {
+      "name": "simple_env",
+      "description": "Environment variable access",
+      "layer": "platform",
+      "github": "https://github.com/ljr1981/simple_env",
+      "dependencies": [],
+      "tags": ["environment", "variables", "config"]
+    },
+    {
+      "name": "simple_system",
+      "description": "System information utilities",
+      "layer": "platform",
+      "github": "https://github.com/ljr1981/simple_system",
+      "dependencies": [],
+      "tags": ["system", "info", "platform"]
+    },
+    {
+      "name": "simple_console",
+      "description": "Console output with colors",
+      "layer": "platform",
+      "github": "https://github.com/ljr1981/simple_console",
+      "dependencies": [],
+      "tags": ["console", "output", "colors", "terminal"]
+    },
+    {
+      "name": "simple_clipboard",
+      "description": "Clipboard operations",
+      "layer": "platform",
+      "github": "https://github.com/ljr1981/simple_clipboard",
+      "dependencies": [],
+      "tags": ["clipboard", "copy", "paste"]
+    },
+    {
+      "name": "simple_registry",
+      "description": "Windows registry access",
+      "layer": "platform",
+      "github": "https://github.com/ljr1981/simple_registry",
+      "dependencies": [],
+      "tags": ["registry", "windows", "config"]
+    },
+    {
+      "name": "simple_mmap",
+      "description": "Memory-mapped files",
+      "layer": "platform",
+      "github": "https://github.com/ljr1981/simple_mmap",
+      "dependencies": [],
+      "tags": ["mmap", "memory", "files"]
+    },
+    {
+      "name": "simple_ipc",
+      "description": "Inter-process communication",
+      "layer": "platform",
+      "github": "https://github.com/ljr1981/simple_ipc",
+      "dependencies": [],
+      "tags": ["ipc", "pipes", "communication"]
+    },
+    {
+      "name": "simple_watcher",
+      "description": "File system watching",
+      "layer": "platform",
+      "github": "https://github.com/ljr1981/simple_watcher",
+      "dependencies": [],
+      "tags": ["watcher", "filesystem", "events"]
+    },
+    {
+      "name": "simple_win32_api",
+      "description": "Windows API wrappers",
+      "layer": "platform",
+      "github": "https://github.com/ljr1981/simple_win32_api",
+      "dependencies": [],
+      "tags": ["windows", "api", "win32"]
+    },
+    {
+      "name": "simple_cache",
+      "description": "In-memory caching",
+      "layer": "service",
+      "github": "https://github.com/ljr1981/simple_cache",
+      "dependencies": ["simple_json"],
+      "tags": ["cache", "memory", "storage"]
+    },
+    {
+      "name": "simple_template",
+      "description": "Template rendering engine",
+      "layer": "service",
+      "github": "https://github.com/ljr1981/simple_template",
+      "dependencies": [],
+      "tags": ["template", "engine", "rendering"]
+    },
+    {
+      "name": "simple_jwt",
+      "description": "JSON Web Token handling",
+      "layer": "service",
+      "github": "https://github.com/ljr1981/simple_jwt",
+      "dependencies": ["simple_json", "simple_base64", "simple_hash"],
+      "tags": ["jwt", "token", "authentication"]
+    },
+    {
+      "name": "simple_cors",
+      "description": "CORS header handling",
+      "layer": "service",
+      "github": "https://github.com/ljr1981/simple_cors",
+      "dependencies": [],
+      "tags": ["cors", "http", "headers", "web"]
+    },
+    {
+      "name": "simple_rate_limiter",
+      "description": "API rate limiting",
+      "layer": "service",
+      "github": "https://github.com/ljr1981/simple_rate_limiter",
+      "dependencies": [],
+      "tags": ["rate-limit", "throttle", "api"]
+    },
+    {
+      "name": "simple_smtp",
+      "description": "Email sending",
+      "layer": "service",
+      "github": "https://github.com/ljr1981/simple_smtp",
+      "dependencies": [],
+      "tags": ["smtp", "email", "mail"]
+    },
+    {
+      "name": "simple_sql",
+      "description": "SQLite database operations",
+      "layer": "service",
+      "github": "https://github.com/ljr1981/simple_sql",
+      "dependencies": [],
+      "tags": ["sql", "database", "sqlite"]
+    },
+    {
+      "name": "simple_websocket",
+      "description": "WebSocket connections",
+      "layer": "service",
+      "github": "https://github.com/ljr1981/simple_websocket",
+      "dependencies": [],
+      "tags": ["websocket", "realtime", "connection"]
+    },
+    {
+      "name": "simple_http",
+      "description": "HTTP client requests",
+      "layer": "service",
+      "github": "https://github.com/ljr1981/simple_http",
+      "dependencies": [],
+      "tags": ["http", "client", "requests", "rest"]
+    },
+    {
+      "name": "simple_encryption",
+      "description": "AES/RSA encryption",
+      "layer": "service",
+      "github": "https://github.com/ljr1981/simple_encryption",
+      "dependencies": ["simple_base64"],
+      "tags": ["encryption", "aes", "rsa", "crypto"]
+    },
+    {
+      "name": "simple_config",
+      "description": "Configuration file handling",
+      "layer": "service",
+      "github": "https://github.com/ljr1981/simple_config",
+      "dependencies": ["simple_json"],
+      "tags": ["config", "configuration", "settings"]
+    },
+    {
+      "name": "simple_pdf",
+      "description": "PDF generation",
+      "layer": "service",
+      "github": "https://github.com/ljr1981/simple_pdf",
+      "dependencies": ["simple_process"],
+      "tags": ["pdf", "generation", "document"]
+    },
+    {
+      "name": "simple_testing",
+      "description": "Testing framework",
+      "layer": "api",
+      "github": "https://github.com/ljr1981/simple_testing",
+      "dependencies": [],
+      "tags": ["testing", "assertions", "framework"]
+    },
+    {
+      "name": "simple_foundation_api",
+      "description": "Foundation layer facade",
+      "layer": "api",
+      "github": "https://github.com/ljr1981/simple_foundation_api",
+      "dependencies": ["simple_base64", "simple_hash", "simple_uuid", "simple_json", "simple_xml", "simple_csv", "simple_markdown", "simple_datetime", "simple_validation", "simple_regex", "simple_process", "simple_logger", "simple_htmx", "simple_randomizer"],
+      "tags": ["foundation", "facade", "utilities"]
+    },
+    {
+      "name": "simple_service_api",
+      "description": "Service layer facade",
+      "layer": "api",
+      "github": "https://github.com/ljr1981/simple_service_api",
+      "dependencies": ["simple_foundation_api", "simple_cache", "simple_template", "simple_jwt", "simple_cors", "simple_rate_limiter", "simple_smtp", "simple_sql", "simple_websocket", "simple_http", "simple_pdf"],
+      "tags": ["service", "facade", "web"]
+    },
+    {
+      "name": "simple_web",
+      "description": "EWF web server wrapper",
+      "layer": "api",
+      "github": "https://github.com/ljr1981/simple_web",
+      "dependencies": ["simple_service_api"],
+      "tags": ["web", "server", "http", "ewf"]
+    },
+    {
+      "name": "simple_app_api",
+      "description": "Full application facade",
+      "layer": "api",
+      "github": "https://github.com/ljr1981/simple_app_api",
+      "dependencies": ["simple_service_api", "simple_web"],
+      "tags": ["application", "facade", "full-stack"]
+    },
+    {
+      "name": "simple_alpine",
+      "description": "Alpine.js integration",
+      "layer": "api",
+      "github": "https://github.com/ljr1981/simple_alpine",
+      "dependencies": ["simple_htmx"],
+      "tags": ["alpine", "javascript", "frontend"]
+    },
+    {
+      "name": "simple_ai_client",
+      "description": "AI API client",
+      "layer": "api",
+      "github": "https://github.com/ljr1981/simple_ai_client",
+      "dependencies": ["simple_http", "simple_json"],
+      "tags": ["ai", "api", "client", "llm"]
+    },
+    {
+      "name": "simple_gui_designer",
+      "description": "GUI designer utilities",
+      "layer": "api",
+      "github": "https://github.com/ljr1981/simple_gui_designer",
+      "dependencies": [],
+      "tags": ["gui", "designer", "vision"]
+    }
+  ]
+}
