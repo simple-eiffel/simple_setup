@@ -4,8 +4,8 @@
 [Setup]
 AppId={{F8A3B2C1-4D5E-6F7A-8B9C-0D1E2F3A4B5C}
 AppName=Simple Ecosystem
-AppVersion=1.0.7
-AppVerName=Simple Ecosystem 1.0.7
+AppVersion=1.0.3
+AppVerName=Simple Ecosystem 1.0.3
 AppPublisher=Larry Rix
 AppPublisherURL=https://github.com/simple-eiffel
 AppSupportURL=https://github.com/simple-eiffel
@@ -15,7 +15,7 @@ DisableDirPage=no
 DefaultGroupName=Simple Ecosystem
 AllowNoIcons=yes
 OutputDir=output
-OutputBaseFilename=simple_ecosystem_1.0.7_setup
+OutputBaseFilename=simple_ecosystem_1.0.3_setup
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
