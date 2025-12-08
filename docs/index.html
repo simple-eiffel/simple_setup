@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple_setup - Package Manager for simple_* Ecosystem</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="simple_* logo" class="logo">
+        </div>
+        <h1>simple_setup</h1>
+        <p class="tagline">Package Manager for simple_* Ecosystem</p>
+        <div class="badges">
+            <span class="badge badge-version">v1.0.0</span>
+            <span class="badge badge-license">MIT</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#quick-start">Quick Start</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="https://github.com/simple-eiffel/simple_setup">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                <strong>simple_setup</strong> is the package manager and installer for the simple_*
+                Eiffel library ecosystem. Install individual libraries or the complete ecosystem
+                with a single command.
+            </p>
+            <p>
+                Includes INNO Setup installer generation for one-click Windows installation.
+            </p>
+        </section>
+
+        <section id="quick-start">
+            <h2>Quick Start</h2>
+
+            <div class="quick-start">
+                <h3>Install a Library</h3>
+<pre><code>simple_setup install simple_json</code></pre>
+
+                <h3>List Available Libraries</h3>
+<pre><code>simple_setup list</code></pre>
+
+                <h3>Generate INNO Installer</h3>
+<pre><code>simple_setup generate-inno --version=1.0.0</code></pre>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>Install individual libraries</li>
+                <li>Environment variable management</li>
+                <li>Library manifest with 50+ libraries</li>
+                <li>INNO Setup installer generation</li>
+                <li>One-click Windows bundle installation</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 simple_* ecosystem. MIT License.</p>
+        <p><a href="https://github.com/simple-eiffel">GitHub</a></p>
+    </footer>
+</body>
+</html>
