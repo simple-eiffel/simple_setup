@@ -188,9 +188,11 @@ feature -- Operations
 			end
 
 			if not l_remaining.is_empty then
-				last_error := "Could not resolve dependencies for: "
-				across l_remaining as l_cursor loop
-					last_error := last_error + l_cursor.name + " "
+				create {STRING} last_error.make_from_string ("Could not resolve dependencies for: ")
+				if attached last_error as l_err then
+					across l_remaining as l_cursor loop
+						l_err.append (l_cursor.name + " ")
+					end
 				end
 				Result := False
 			end

@@ -1,0 +1,22 @@
+# EiffelStudio build artifacts
+EIFGENs/
+
+# Log files
+*.log
+
+# Test output files
+*.tmp
+
+# Windows resource files (generated)
+*.rc
+
+# IDE settings (optional - keep if you want)
+# .claude/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*~
+*.bak

@@ -8,7 +8,7 @@ class
 	SST_TEST_APP
 
 inherit
-	EQA_TEST_SET
+	TEST_SET_BASE
 
 create
 	make

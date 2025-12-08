@@ -36,7 +36,7 @@ feature {NONE} -- Initialization
 	make
 			-- Run the installer application
 		do
-			create console.make
+			create console
 			create manifest.make
 			create installer.make (manifest)
 			create env_manager.make
@@ -49,7 +49,7 @@ feature {NONE} -- Initialization
 feature -- Access
 
 	console: SIMPLE_CONSOLE
-			-- Console output handler
+			-- Console for color control
 
 	manifest: SST_MANIFEST
 			-- Library manifest
@@ -62,6 +62,33 @@ feature -- Access
 
 	inno_generator: SST_INNO_GENERATOR
 			-- Inno Setup script generator
+
+feature -- Output helpers
+
+	print_line (a_text: READABLE_STRING_GENERAL)
+			-- Print text followed by newline
+		do
+			print (a_text)
+			print ("%N")
+		end
+
+	print_error (a_text: READABLE_STRING_GENERAL)
+			-- Print error text in red
+		do
+			console.set_foreground (console.Red)
+			print (a_text)
+			print ("%N")
+			console.reset_color
+		end
+
+	print_success (a_text: READABLE_STRING_GENERAL)
+			-- Print success text in green
+		do
+			console.set_foreground (console.Green)
+			print (a_text)
+			print ("%N")
+			console.reset_color
+		end
 
 feature {NONE} -- Command Parsing
 
@@ -148,7 +175,7 @@ feature {NONE} -- Command Execution
 			elseif command.same_string ("help") then
 				execute_help
 			else
-				console.print_error ("Unknown command: " + command)
+				print_error ("Unknown command: " + command)
 				execute_help
 			end
 		end
@@ -156,14 +183,14 @@ feature {NONE} -- Command Execution
 	execute_install
 			-- Install specified libraries
 		do
-			console.print_line ("Installing libraries...")
+			print_line ("Installing libraries...")
 			if command_args.is_empty then
-				console.print_error ("No libraries specified. Use: simple_setup install <lib1> [<lib2>...]")
+				print_error ("No libraries specified. Use: simple_setup install <lib1> [<lib2>...]")
 			else
 				across command_args as l_cursor loop
 					install_library (l_cursor)
 				end
-				console.print_success ("Installation complete. Restart your terminal to apply environment variables.")
+				print_success ("Installation complete. Restart your terminal to apply environment variables.")
 			end
 		end
 
@@ -171,41 +198,41 @@ feature {NONE} -- Command Execution
 			-- Update libraries
 		do
 			if options.has ("all") then
-				console.print_line ("Updating all installed libraries...")
+				print_line ("Updating all installed libraries...")
 				across manifest.libraries as l_cursor loop
 					if installer.is_installed (l_cursor) then
 						update_library (l_cursor.name.to_string_32)
 					end
 				end
 			elseif command_args.is_empty then
-				console.print_error ("Specify libraries or use --all. Usage: simple_setup update [--all | <lib>...]")
+				print_error ("Specify libraries or use --all. Usage: simple_setup update [--all | <lib>...]")
 			else
 				across command_args as l_cursor loop
 					update_library (l_cursor)
 				end
 			end
-			console.print_success ("Update complete.")
+			print_success ("Update complete.")
 		end
 
 	execute_list
 			-- List available libraries
 		do
-			console.print_line ("Available libraries in simple_* ecosystem:")
-			console.print_line ("")
+			print_line ("Available libraries in simple_* ecosystem:")
+			print_line ("")
 
-			console.print_line ("== Foundation Layer ==")
+			print_line ("== Foundation Layer ==")
 			print_libraries_by_layer ("foundation")
 
-			console.print_line ("")
-			console.print_line ("== Service Layer ==")
+			print_line ("")
+			print_line ("== Service Layer ==")
 			print_libraries_by_layer ("service")
 
-			console.print_line ("")
-			console.print_line ("== Platform Layer ==")
+			print_line ("")
+			print_line ("== Platform Layer ==")
 			print_libraries_by_layer ("platform")
 
-			console.print_line ("")
-			console.print_line ("== API Facades ==")
+			print_line ("")
+			print_line ("== API Facades ==")
 			print_libraries_by_layer ("api")
 		end
 
@@ -215,13 +242,13 @@ feature {NONE} -- Command Execution
 			l_lib: detachable SST_LIBRARY_INFO
 		do
 			if command_args.is_empty then
-				console.print_error ("Specify a library. Usage: simple_setup info <lib>")
+				print_error ("Specify a library. Usage: simple_setup info <lib>")
 			else
 				l_lib := manifest.library_by_name (command_args.first.to_string_8)
 				if attached l_lib as l_info then
 					print_library_info (l_info)
 				else
-					console.print_error ("Unknown library: " + command_args.first)
+					print_error ("Unknown library: " + command_args.first)
 				end
 			end
 		end
@@ -231,21 +258,21 @@ feature {NONE} -- Command Execution
 		local
 			l_installed, l_missing: INTEGER
 		do
-			console.print_line ("Installed libraries:")
-			console.print_line ("")
+			print_line ("Installed libraries:")
+			print_line ("")
 
 			across manifest.libraries as l_cursor loop
 				if installer.is_installed (l_cursor) then
-					console.print_success ("  [x] " + l_cursor.name)
+					print_success ("  [x] " + l_cursor.name)
 					l_installed := l_installed + 1
 				else
-					console.print_line ("  [ ] " + l_cursor.name)
+					print_line ("  [ ] " + l_cursor.name)
 					l_missing := l_missing + 1
 				end
 			end
 
-			console.print_line ("")
-			console.print_line ("Installed: " + l_installed.out + " / " + manifest.libraries.count.out)
+			print_line ("")
+			print_line ("Installed: " + l_installed.out + " / " + manifest.libraries.count.out)
 		end
 
 	execute_generate_inno
@@ -265,9 +292,9 @@ feature {NONE} -- Command Execution
 				l_output := "simple_ecosystem_setup.iss"
 			end
 
-			console.print_line ("Generating Inno Setup script...")
+			print_line ("Generating Inno Setup script...")
 			inno_generator.generate (l_version, l_output)
-			console.print_success ("Generated: " + l_output)
+			print_success ("Generated: " + l_output)
 		end
 
 	execute_build_installer
@@ -281,46 +308,46 @@ feature {NONE} -- Command Execution
 				l_version := "1.0.0"
 			end
 
-			console.print_line ("Building Windows installer...")
+			print_line ("Building Windows installer...")
 
 			-- First generate the .iss file
 			inno_generator.generate (l_version, "simple_ecosystem_setup.iss")
 
 			-- Then compile it with Inno Setup
 			if inno_generator.compile_installer ("simple_ecosystem_setup.iss") then
-				console.print_success ("Installer built successfully!")
+				print_success ("Installer built successfully!")
 			else
-				console.print_error ("Failed to build installer. Is Inno Setup installed?")
+				print_error ("Failed to build installer. Is Inno Setup installed?")
 			end
 		end
 
 	execute_help
 			-- Show help information
 		do
-			console.print_line ("Simple Setup - Package manager for simple_* ecosystem")
-			console.print_line ("")
-			console.print_line ("Usage: simple_setup <command> [options] [arguments]")
-			console.print_line ("")
-			console.print_line ("Commands:")
-			console.print_line ("  install <lib> [<lib>...]   Install one or more libraries")
-			console.print_line ("  update [--all | <lib>...]  Update libraries (--all for all installed)")
-			console.print_line ("  list                       List all available libraries")
-			console.print_line ("  info <lib>                 Show detailed library information")
-			console.print_line ("  status                     Show which libraries are installed")
-			console.print_line ("  generate-inno              Generate Inno Setup script")
-			console.print_line ("  build-installer            Build Windows installer")
-			console.print_line ("  help                       Show this help message")
-			console.print_line ("")
-			console.print_line ("Options:")
-			console.print_line ("  --version=X.Y.Z            Version for installer generation")
-			console.print_line ("  --output=<file>            Output filename for generated script")
-			console.print_line ("  --install-dir=<path>       Installation directory (default: D:\prod)")
-			console.print_line ("  --all                      Apply to all libraries (with update)")
-			console.print_line ("")
-			console.print_line ("Examples:")
-			console.print_line ("  simple_setup install simple_json simple_csv")
-			console.print_line ("  simple_setup update --all")
-			console.print_line ("  simple_setup build-installer --version=1.0.0")
+			print_line ("Simple Setup - Package manager for simple_* ecosystem")
+			print_line ("")
+			print_line ("Usage: simple_setup <command> [options] [arguments]")
+			print_line ("")
+			print_line ("Commands:")
+			print_line ("  install <lib> [<lib>...]   Install one or more libraries")
+			print_line ("  update [--all | <lib>...]  Update libraries (--all for all installed)")
+			print_line ("  list                       List all available libraries")
+			print_line ("  info <lib>                 Show detailed library information")
+			print_line ("  status                     Show which libraries are installed")
+			print_line ("  generate-inno              Generate Inno Setup script")
+			print_line ("  build-installer            Build Windows installer")
+			print_line ("  help                       Show this help message")
+			print_line ("")
+			print_line ("Options:")
+			print_line ("  --version=X.Y.Z            Version for installer generation")
+			print_line ("  --output=<file>            Output filename for generated script")
+			print_line ("  --install-dir=<path>       Installation directory (default: D:\prod)")
+			print_line ("  --all                      Apply to all libraries (with update)")
+			print_line ("")
+			print_line ("Examples:")
+			print_line ("  simple_setup install simple_json simple_csv")
+			print_line ("  simple_setup update --all")
+			print_line ("  simple_setup build-installer --version=1.0.0")
 		end
 
 feature {NONE} -- Implementation
@@ -333,7 +360,7 @@ feature {NONE} -- Implementation
 		do
 			l_lib := manifest.library_by_name (a_name.to_string_8)
 			if attached l_lib as l_info then
-				console.print_line ("  Installing " + l_info.name + "...")
+				print_line ("  Installing " + l_info.name + "...")
 
 				-- Install dependencies first
 				from i := 1 until i > l_info.dependencies.count loop
@@ -348,12 +375,12 @@ feature {NONE} -- Implementation
 				-- Install the library
 				if installer.install (l_info) then
 					env_manager.set_library_env (l_info)
-					console.print_success ("    " + l_info.name + " installed")
+					print_success ("    " + l_info.name + " installed")
 				else
-					console.print_error ("    Failed to install " + l_info.name)
+					print_error ("    Failed to install " + l_info.name)
 				end
 			else
-				console.print_error ("  Unknown library: " + a_name)
+				print_error ("  Unknown library: " + a_name)
 			end
 		end
 
@@ -364,14 +391,14 @@ feature {NONE} -- Implementation
 		do
 			l_lib := manifest.library_by_name (a_name.to_string_8)
 			if attached l_lib as l_info then
-				console.print_line ("  Updating " + l_info.name + "...")
+				print_line ("  Updating " + l_info.name + "...")
 				if installer.update (l_info) then
-					console.print_success ("    " + l_info.name + " updated")
+					print_success ("    " + l_info.name + " updated")
 				else
-					console.print_error ("    Failed to update " + l_info.name)
+					print_error ("    Failed to update " + l_info.name)
 				end
 			else
-				console.print_error ("  Unknown library: " + a_name)
+				print_error ("  Unknown library: " + a_name)
 			end
 		end
 
@@ -381,9 +408,9 @@ feature {NONE} -- Implementation
 			across manifest.libraries as l_cursor loop
 				if l_cursor.layer.same_string (a_layer) then
 					if installer.is_installed (l_cursor) then
-						console.print_line ("  [x] " + l_cursor.name + " - " + l_cursor.description)
+						print_line ("  [x] " + l_cursor.name + " - " + l_cursor.description)
 					else
-						console.print_line ("  [ ] " + l_cursor.name + " - " + l_cursor.description)
+						print_line ("  [ ] " + l_cursor.name + " - " + l_cursor.description)
 					end
 				end
 			end
@@ -394,26 +421,26 @@ feature {NONE} -- Implementation
 		local
 			i: INTEGER
 		do
-			console.print_line ("Library: " + a_lib.name)
-			console.print_line ("Description: " + a_lib.description)
-			console.print_line ("Layer: " + a_lib.layer)
-			console.print_line ("GitHub: " + a_lib.github_url)
+			print_line ("Library: " + a_lib.name)
+			print_line ("Description: " + a_lib.description)
+			print_line ("Layer: " + a_lib.layer)
+			print_line ("GitHub: " + a_lib.github_url)
 
 			if not a_lib.dependencies.is_empty then
-				console.print_line ("Dependencies:")
+				print_line ("Dependencies:")
 				from i := 1 until i > a_lib.dependencies.count loop
-					console.print_line ("  - " + a_lib.dependencies [i])
+					print_line ("  - " + a_lib.dependencies [i])
 					i := i + 1
 				end
 			end
 
-			console.print_line ("Environment Variable: " + a_lib.env_var_name)
+			print_line ("Environment Variable: " + a_lib.env_var_name)
 
 			if installer.is_installed (a_lib) then
-				console.print_success ("Status: Installed")
-				console.print_line ("Path: " + installer.install_path (a_lib))
+				print_success ("Status: Installed")
+				print_line ("Path: " + installer.install_path (a_lib))
 			else
-				console.print_line ("Status: Not installed")
+				print_line ("Status: Not installed")
 			end
 		end
 
