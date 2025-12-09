@@ -4,8 +4,8 @@
 [Setup]
 AppId={{F8A3B2C1-4D5E-6F7A-8B9C-0D1E2F3A4B5C}
 AppName=Simple Ecosystem
-AppVersion=1.0.3
-AppVerName=Simple Ecosystem 1.0.3
+AppVersion=1.0.4
+AppVerName=Simple Ecosystem 1.0.4
 AppPublisher=Larry Rix
 AppPublisherURL=https://github.com/simple-eiffel
 AppSupportURL=https://github.com/simple-eiffel
@@ -15,7 +15,7 @@ DisableDirPage=no
 DefaultGroupName=Simple Ecosystem
 AllowNoIcons=yes
 OutputDir=output
-OutputBaseFilename=simple_ecosystem_1.0.3_setup
+OutputBaseFilename=simple_ecosystem_1.0.4_setup
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -30,49 +30,58 @@ Name: "envpath"; Description: "Set environment variables"; GroupDescription: "Co
 
 [Files]
 ; Source files from install directory, excluding build artifacts
-Source: "D:\prod\simple_base64\*"; DestDir: "{app}\simple_base64"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_hash\*"; DestDir: "{app}\simple_hash"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_uuid\*"; DestDir: "{app}\simple_uuid"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_randomizer\*"; DestDir: "{app}\simple_randomizer"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_json\*"; DestDir: "{app}\simple_json"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_xml\*"; DestDir: "{app}\simple_xml"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_csv\*"; DestDir: "{app}\simple_csv"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_markdown\*"; DestDir: "{app}\simple_markdown"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_datetime\*"; DestDir: "{app}\simple_datetime"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_validation\*"; DestDir: "{app}\simple_validation"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_regex\*"; DestDir: "{app}\simple_regex"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_process\*"; DestDir: "{app}\simple_process"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_logger\*"; DestDir: "{app}\simple_logger"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_htmx\*"; DestDir: "{app}\simple_htmx"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_env\*"; DestDir: "{app}\simple_env"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_system\*"; DestDir: "{app}\simple_system"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_console\*"; DestDir: "{app}\simple_console"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_clipboard\*"; DestDir: "{app}\simple_clipboard"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_registry\*"; DestDir: "{app}\simple_registry"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_mmap\*"; DestDir: "{app}\simple_mmap"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_ipc\*"; DestDir: "{app}\simple_ipc"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_watcher\*"; DestDir: "{app}\simple_watcher"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_win32_api\*"; DestDir: "{app}\simple_win32_api"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_cache\*"; DestDir: "{app}\simple_cache"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_template\*"; DestDir: "{app}\simple_template"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_jwt\*"; DestDir: "{app}\simple_jwt"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_cors\*"; DestDir: "{app}\simple_cors"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_rate_limiter\*"; DestDir: "{app}\simple_rate_limiter"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_smtp\*"; DestDir: "{app}\simple_smtp"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_sql\*"; DestDir: "{app}\simple_sql"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_websocket\*"; DestDir: "{app}\simple_websocket"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_http\*"; DestDir: "{app}\simple_http"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_encryption\*"; DestDir: "{app}\simple_encryption"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_config\*"; DestDir: "{app}\simple_config"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_pdf\*"; DestDir: "{app}\simple_pdf"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_testing\*"; DestDir: "{app}\simple_testing"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_foundation_api\*"; DestDir: "{app}\simple_foundation_api"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_service_api\*"; DestDir: "{app}\simple_service_api"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_web\*"; DestDir: "{app}\simple_web"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_app_api\*"; DestDir: "{app}\simple_app_api"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_alpine\*"; DestDir: "{app}\simple_alpine"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_ai_client\*"; DestDir: "{app}\simple_ai_client"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
-Source: "D:\prod\simple_gui_designer\*"; DestDir: "{app}\simple_gui_designer"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_base64\*"; DestDir: "{app}\simple_base64"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_hash\*"; DestDir: "{app}\simple_hash"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_uuid\*"; DestDir: "{app}\simple_uuid"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_randomizer\*"; DestDir: "{app}\simple_randomizer"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_json\*"; DestDir: "{app}\simple_json"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_xml\*"; DestDir: "{app}\simple_xml"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_csv\*"; DestDir: "{app}\simple_csv"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_markdown\*"; DestDir: "{app}\simple_markdown"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_datetime\*"; DestDir: "{app}\simple_datetime"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_validation\*"; DestDir: "{app}\simple_validation"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_regex\*"; DestDir: "{app}\simple_regex"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_process\*"; DestDir: "{app}\simple_process"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_logger\*"; DestDir: "{app}\simple_logger"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_htmx\*"; DestDir: "{app}\simple_htmx"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_env\*"; DestDir: "{app}\simple_env"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_system\*"; DestDir: "{app}\simple_system"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_console\*"; DestDir: "{app}\simple_console"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_clipboard\*"; DestDir: "{app}\simple_clipboard"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_registry\*"; DestDir: "{app}\simple_registry"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_mmap\*"; DestDir: "{app}\simple_mmap"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_ipc\*"; DestDir: "{app}\simple_ipc"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_watcher\*"; DestDir: "{app}\simple_watcher"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_win32_api\*"; DestDir: "{app}\simple_win32_api"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_cache\*"; DestDir: "{app}\simple_cache"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_template\*"; DestDir: "{app}\simple_template"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_jwt\*"; DestDir: "{app}\simple_jwt"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_cors\*"; DestDir: "{app}\simple_cors"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_rate_limiter\*"; DestDir: "{app}\simple_rate_limiter"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_smtp\*"; DestDir: "{app}\simple_smtp"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_sql\*"; DestDir: "{app}\simple_sql"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_websocket\*"; DestDir: "{app}\simple_websocket"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_http\*"; DestDir: "{app}\simple_http"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_encryption\*"; DestDir: "{app}\simple_encryption"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_config\*"; DestDir: "{app}\simple_config"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_pdf\*"; DestDir: "{app}\simple_pdf"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_testing\*"; DestDir: "{app}\simple_testing"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_foundation_api\*"; DestDir: "{app}\simple_foundation_api"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_service_api\*"; DestDir: "{app}\simple_service_api"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_web\*"; DestDir: "{app}\simple_web"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_app_api\*"; DestDir: "{app}\simple_app_api"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_alpine\*"; DestDir: "{app}\simple_alpine"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_ai_client\*"; DestDir: "{app}\simple_ai_client"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_gui_designer\*"; DestDir: "{app}\simple_gui_designer"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_archive\*"; DestDir: "{app}\simple_archive"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_ci\*"; DestDir: "{app}\simple_ci"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_cli\*"; DestDir: "{app}\simple_cli"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_compression\*"; DestDir: "{app}\simple_compression"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_file\*"; DestDir: "{app}\simple_file"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_i18n\*"; DestDir: "{app}\simple_i18n"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_mongo\*"; DestDir: "{app}\simple_mongo"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_oracle\*"; DestDir: "{app}\simple_oracle"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h,*.db"
+Source: "D:\prod\simple_showcase\*"; DestDir: "{app}\simple_showcase"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,docs\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
 
 [Icons]
 Name: "{group}\Simple Ecosystem Documentation"; Filename: "{app}\README.md"
@@ -144,6 +153,15 @@ begin
       SetEnvVar('SIMPLE_ALPINE', ExpandConstant('{app}\simple_alpine'));
       SetEnvVar('SIMPLE_AI_CLIENT', ExpandConstant('{app}\simple_ai_client'));
       SetEnvVar('SIMPLE_GUI_DESIGNER', ExpandConstant('{app}\simple_gui_designer'));
+      SetEnvVar('SIMPLE_ARCHIVE', ExpandConstant('{app}\simple_archive'));
+      SetEnvVar('SIMPLE_CI', ExpandConstant('{app}\simple_ci'));
+      SetEnvVar('SIMPLE_CLI', ExpandConstant('{app}\simple_cli'));
+      SetEnvVar('SIMPLE_COMPRESSION', ExpandConstant('{app}\simple_compression'));
+      SetEnvVar('SIMPLE_FILE', ExpandConstant('{app}\simple_file'));
+      SetEnvVar('SIMPLE_I18N', ExpandConstant('{app}\simple_i18n'));
+      SetEnvVar('SIMPLE_MONGO', ExpandConstant('{app}\simple_mongo'));
+      SetEnvVar('SIMPLE_ORACLE', ExpandConstant('{app}\simple_oracle'));
+      SetEnvVar('SIMPLE_SHOWCASE', ExpandConstant('{app}\simple_showcase'));
     end;
   end;
 end;
@@ -195,5 +213,14 @@ begin
     RemoveEnvVar('SIMPLE_ALPINE');
     RemoveEnvVar('SIMPLE_AI_CLIENT');
     RemoveEnvVar('SIMPLE_GUI_DESIGNER');
+    RemoveEnvVar('SIMPLE_ARCHIVE');
+    RemoveEnvVar('SIMPLE_CI');
+    RemoveEnvVar('SIMPLE_CLI');
+    RemoveEnvVar('SIMPLE_COMPRESSION');
+    RemoveEnvVar('SIMPLE_FILE');
+    RemoveEnvVar('SIMPLE_I18N');
+    RemoveEnvVar('SIMPLE_MONGO');
+    RemoveEnvVar('SIMPLE_ORACLE');
+    RemoveEnvVar('SIMPLE_SHOWCASE');
   end;
 end;
