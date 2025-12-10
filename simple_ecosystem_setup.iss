@@ -4,8 +4,8 @@
 [Setup]
 AppId={{F8A3B2C1-4D5E-6F7A-8B9C-0D1E2F3A4B5C}
 AppName=Simple Ecosystem
-AppVersion=1.0.4
-AppVerName=Simple Ecosystem 1.0.4
+AppVersion=1.1.0
+AppVerName=Simple Ecosystem 1.1.0
 AppPublisher=Larry Rix
 AppPublisherURL=https://github.com/simple-eiffel
 AppSupportURL=https://github.com/simple-eiffel
@@ -15,7 +15,7 @@ DisableDirPage=no
 DefaultGroupName=Simple Ecosystem
 AllowNoIcons=yes
 OutputDir=output
-OutputBaseFilename=simple_ecosystem_1.0.4_setup
+OutputBaseFilename=simple_ecosystem_1.1.0_setup
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -27,6 +27,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
 Name: "envpath"; Description: "Set environment variables"; GroupDescription: "Configuration:"
+Name: "vscode"; Description: "Install VS Code extension (Eiffel LSP)"; GroupDescription: "IDE Integration:"; Flags: checkedonce
 
 [Files]
 ; Source files from install directory, excluding build artifacts
@@ -82,6 +83,11 @@ Source: "D:\prod\simple_i18n\*"; DestDir: "{app}\simple_i18n"; Flags: ignorevers
 Source: "D:\prod\simple_mongo\*"; DestDir: "{app}\simple_mongo"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
 Source: "D:\prod\simple_oracle\*"; DestDir: "{app}\simple_oracle"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h,*.db"
 Source: "D:\prod\simple_showcase\*"; DestDir: "{app}\simple_showcase"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_eiffel_parser\*"; DestDir: "{app}\simple_eiffel_parser"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+; VS Code LSP - pre-built executable and extension only (no full source needed for end users)
+Source: "D:\prod\simple_lsp\EIFGENs\simple_lsp_exe\F_code\simple_lsp.exe"; DestDir: "{app}\tools\lsp"; Flags: ignoreversion
+Source: "D:\prod\simple_lsp\vscode-extension\eiffel-lsp-0.6.0.vsix"; DestDir: "{app}\tools\lsp"; Flags: ignoreversion
+Source: "D:\prod\simple_lsp\README.md"; DestDir: "{app}\tools\lsp"; DestName: "README.md"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\Simple Ecosystem Documentation"; Filename: "{app}\README.md"
@@ -92,8 +98,18 @@ Name: "{group}\{cm:UninstallProgram,Simple Ecosystem}"; Filename: "{uninstallexe
 
 [Run]
 ; Post-installation actions
+; Install VS Code extension if task selected and VS Code installed
+Filename: "cmd.exe"; Parameters: "/c code --install-extension ""{app}\tools\lsp\eiffel-lsp-0.6.0.vsix"""; StatusMsg: "Installing VS Code Eiffel extension..."; Flags: runhidden waituntilterminated; Tasks: vscode; Check: VSCodeInstalled
 
 [Code]
+// Check if VS Code is installed
+function VSCodeInstalled: Boolean;
+var
+  ResultCode: Integer;
+begin
+  Result := Exec('cmd.exe', '/c where code', '', SW_HIDE, ewWaitUntilTerminated, ResultCode) and (ResultCode = 0);
+end;
+
 procedure SetEnvVar(Name, Value: string);
 begin
   RegWriteStringValue(HKEY_CURRENT_USER, 'Environment', Name, Value);
@@ -162,6 +178,8 @@ begin
       SetEnvVar('SIMPLE_MONGO', ExpandConstant('{app}\simple_mongo'));
       SetEnvVar('SIMPLE_ORACLE', ExpandConstant('{app}\simple_oracle'));
       SetEnvVar('SIMPLE_SHOWCASE', ExpandConstant('{app}\simple_showcase'));
+      SetEnvVar('SIMPLE_EIFFEL_PARSER', ExpandConstant('{app}\simple_eiffel_parser'));
+      SetEnvVar('SIMPLE_LSP', ExpandConstant('{app}\tools\lsp'));
     end;
   end;
 end;
@@ -222,5 +240,7 @@ begin
     RemoveEnvVar('SIMPLE_MONGO');
     RemoveEnvVar('SIMPLE_ORACLE');
     RemoveEnvVar('SIMPLE_SHOWCASE');
+    RemoveEnvVar('SIMPLE_EIFFEL_PARSER');
+    RemoveEnvVar('SIMPLE_LSP');
   end;
 end;
