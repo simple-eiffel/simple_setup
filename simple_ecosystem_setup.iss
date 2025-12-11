@@ -4,8 +4,8 @@
 [Setup]
 AppId={{F8A3B2C1-4D5E-6F7A-8B9C-0D1E2F3A4B5C}
 AppName=Simple Ecosystem
-AppVersion=1.1.0
-AppVerName=Simple Ecosystem 1.1.0
+AppVersion=1.2.0
+AppVerName=Simple Ecosystem 1.2.0
 AppPublisher=Larry Rix
 AppPublisherURL=https://github.com/simple-eiffel
 AppSupportURL=https://github.com/simple-eiffel
@@ -15,7 +15,7 @@ DisableDirPage=no
 DefaultGroupName=Simple Ecosystem
 AllowNoIcons=yes
 OutputDir=output
-OutputBaseFilename=simple_ecosystem_1.1.0_setup
+OutputBaseFilename=simple_ecosystem_1.2.0_setup
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -77,6 +77,10 @@ Source: "D:\prod\simple_gui_designer\*"; DestDir: "{app}\simple_gui_designer"; F
 Source: "D:\prod\simple_archive\*"; DestDir: "{app}\simple_archive"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
 Source: "D:\prod\simple_ci\*"; DestDir: "{app}\simple_ci"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
 Source: "D:\prod\simple_cli\*"; DestDir: "{app}\simple_cli"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_codec\*"; DestDir: "{app}\simple_codec"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_toml\*"; DestDir: "{app}\simple_toml"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_ucf\*"; DestDir: "{app}\simple_ucf"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
+Source: "D:\prod\simple_yaml\*"; DestDir: "{app}\simple_yaml"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
 Source: "D:\prod\simple_compression\*"; DestDir: "{app}\simple_compression"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
 Source: "D:\prod\simple_file\*"; DestDir: "{app}\simple_file"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
 Source: "D:\prod\simple_i18n\*"; DestDir: "{app}\simple_i18n"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
@@ -86,7 +90,7 @@ Source: "D:\prod\simple_showcase\*"; DestDir: "{app}\simple_showcase"; Flags: ig
 Source: "D:\prod\simple_eiffel_parser\*"; DestDir: "{app}\simple_eiffel_parser"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
 ; VS Code LSP - pre-built executable and extension only (no full source needed for end users)
 Source: "D:\prod\simple_lsp\EIFGENs\simple_lsp_exe\F_code\simple_lsp.exe"; DestDir: "{app}\tools\lsp"; Flags: ignoreversion
-Source: "D:\prod\simple_lsp\vscode-extension\eiffel-lsp-0.6.0.vsix"; DestDir: "{app}\tools\lsp"; Flags: ignoreversion
+Source: "D:\prod\simple_lsp\vscode-extension\eiffel-lsp-0.7.4.vsix"; DestDir: "{app}\tools\lsp"; Flags: ignoreversion
 Source: "D:\prod\simple_lsp\README.md"; DestDir: "{app}\tools\lsp"; DestName: "README.md"; Flags: ignoreversion
 
 [Icons]
@@ -99,7 +103,7 @@ Name: "{group}\{cm:UninstallProgram,Simple Ecosystem}"; Filename: "{uninstallexe
 [Run]
 ; Post-installation actions
 ; Install VS Code extension if task selected and VS Code installed
-Filename: "cmd.exe"; Parameters: "/c code --install-extension ""{app}\tools\lsp\eiffel-lsp-0.6.0.vsix"""; StatusMsg: "Installing VS Code Eiffel extension..."; Flags: runhidden waituntilterminated; Tasks: vscode; Check: VSCodeInstalled
+Filename: "cmd.exe"; Parameters: "/c code --install-extension ""{app}\tools\lsp\eiffel-lsp-0.7.4.vsix"""; StatusMsg: "Installing VS Code Eiffel extension..."; Flags: runhidden waituntilterminated; Tasks: vscode; Check: VSCodeInstalled
 
 [Code]
 // Check if VS Code is installed
@@ -172,6 +176,10 @@ begin
       SetEnvVar('SIMPLE_ARCHIVE', ExpandConstant('{app}\simple_archive'));
       SetEnvVar('SIMPLE_CI', ExpandConstant('{app}\simple_ci'));
       SetEnvVar('SIMPLE_CLI', ExpandConstant('{app}\simple_cli'));
+      SetEnvVar('SIMPLE_CODEC', ExpandConstant('{app}\simple_codec'));
+      SetEnvVar('SIMPLE_TOML', ExpandConstant('{app}\simple_toml'));
+      SetEnvVar('SIMPLE_UCF', ExpandConstant('{app}\simple_ucf'));
+      SetEnvVar('SIMPLE_YAML', ExpandConstant('{app}\simple_yaml'));
       SetEnvVar('SIMPLE_COMPRESSION', ExpandConstant('{app}\simple_compression'));
       SetEnvVar('SIMPLE_FILE', ExpandConstant('{app}\simple_file'));
       SetEnvVar('SIMPLE_I18N', ExpandConstant('{app}\simple_i18n'));
@@ -234,6 +242,10 @@ begin
     RemoveEnvVar('SIMPLE_ARCHIVE');
     RemoveEnvVar('SIMPLE_CI');
     RemoveEnvVar('SIMPLE_CLI');
+    RemoveEnvVar('SIMPLE_CODEC');
+    RemoveEnvVar('SIMPLE_TOML');
+    RemoveEnvVar('SIMPLE_UCF');
+    RemoveEnvVar('SIMPLE_YAML');
     RemoveEnvVar('SIMPLE_COMPRESSION');
     RemoveEnvVar('SIMPLE_FILE');
     RemoveEnvVar('SIMPLE_I18N');

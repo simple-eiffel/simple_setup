@@ -3,11 +3,15 @@
 </p>
 
 # SIMPLE_SETUP
+
+**[Documentation](https://simple-eiffel.github.io/simple_setup/)** | **[GitHub](https://github.com/simple-eiffel/simple_setup)**
+
 ### Package Manager and Windows Installer Generator for the simple_* Ecosystem
 
 [![Language](https://img.shields.io/badge/language-Eiffel-blue.svg)](https://www.eiffel.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Design by Contract](https://img.shields.io/badge/DbC-enforced-orange.svg)]()
+[![SCOOP](https://img.shields.io/badge/SCOOP-compatible-brightgreen.svg)]()
 
 ---
 
