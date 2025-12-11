@@ -4,8 +4,8 @@
 [Setup]
 AppId={{F8A3B2C1-4D5E-6F7A-8B9C-0D1E2F3A4B5C}
 AppName=Simple Ecosystem
-AppVersion=1.2.0
-AppVerName=Simple Ecosystem 1.2.0
+AppVersion=1.3.1
+AppVerName=Simple Ecosystem 1.3.1
 AppPublisher=Larry Rix
 AppPublisherURL=https://github.com/simple-eiffel
 AppSupportURL=https://github.com/simple-eiffel
@@ -15,7 +15,7 @@ DisableDirPage=no
 DefaultGroupName=Simple Ecosystem
 AllowNoIcons=yes
 OutputDir=output
-OutputBaseFilename=simple_ecosystem_1.2.0_setup
+OutputBaseFilename=simple_ecosystem_1.3.1_setup
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -90,7 +90,7 @@ Source: "D:\prod\simple_showcase\*"; DestDir: "{app}\simple_showcase"; Flags: ig
 Source: "D:\prod\simple_eiffel_parser\*"; DestDir: "{app}\simple_eiffel_parser"; Flags: ignoreversion recursesubdirs createallsubdirs; Excludes: "EIFGENs\*,.git\*,Documentation\*,*.obj,*.exe,*.log,nul,*.pdb,*.lib,*.c,*.h"
 ; VS Code LSP - pre-built executable and extension only (no full source needed for end users)
 Source: "D:\prod\simple_lsp\EIFGENs\simple_lsp_exe\F_code\simple_lsp.exe"; DestDir: "{app}\tools\lsp"; Flags: ignoreversion
-Source: "D:\prod\simple_lsp\vscode-extension\eiffel-lsp-0.7.4.vsix"; DestDir: "{app}\tools\lsp"; Flags: ignoreversion
+Source: "D:\prod\simple_lsp\vscode-extension\eiffel-lsp-0.8.1.vsix"; DestDir: "{app}\tools\lsp"; Flags: ignoreversion
 Source: "D:\prod\simple_lsp\README.md"; DestDir: "{app}\tools\lsp"; DestName: "README.md"; Flags: ignoreversion
 
 [Icons]
@@ -103,7 +103,7 @@ Name: "{group}\{cm:UninstallProgram,Simple Ecosystem}"; Filename: "{uninstallexe
 [Run]
 ; Post-installation actions
 ; Install VS Code extension if task selected and VS Code installed
-Filename: "cmd.exe"; Parameters: "/c code --install-extension ""{app}\tools\lsp\eiffel-lsp-0.7.4.vsix"""; StatusMsg: "Installing VS Code Eiffel extension..."; Flags: runhidden waituntilterminated; Tasks: vscode; Check: VSCodeInstalled
+Filename: "cmd.exe"; Parameters: "/c code --install-extension ""{app}\tools\lsp\eiffel-lsp-0.8.1.vsix"""; StatusMsg: "Installing VS Code Eiffel extension..."; Flags: runhidden waituntilterminated; Tasks: vscode; Check: VSCodeInstalled
 
 [Code]
 // Check if VS Code is installed
