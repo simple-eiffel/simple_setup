@@ -25,6 +25,6 @@
 		<root class="SST_TEST_APP" feature="make"/>
 		<library name="testing" location="$ISE_LIBRARY\library\testing\testing.ecf"/>
 		<library name="simple_testing" location="$SIMPLE_TESTING\simple_testing.ecf"/>
-		<cluster name="tests" location=".\tests\" recursive="true"/>
+		<cluster name="test_classes" location=".\testing\" recursive="true"/>
 	</target>
 </system>

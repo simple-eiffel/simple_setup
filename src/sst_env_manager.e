@@ -56,9 +56,9 @@ feature -- Operations
 			-- Use PowerShell to set user environment variable persistently
 			l_cmd := "powershell -Command %"[Environment]::SetEnvironmentVariable('" +
 				a_name + "', '" + a_value + "', 'User')%""
-			process.execute (l_cmd)
+			process.run (l_cmd)
 
-			if not process.was_successful then
+			if not process.succeeded then
 				if attached process.last_error as l_err then
 					last_error := l_err.to_string_8
 				else
@@ -74,9 +74,9 @@ feature -- Operations
 		do
 			l_cmd := "powershell -Command %"[Environment]::GetEnvironmentVariable('" +
 				a_name + "', 'User')%""
-			process.execute (l_cmd)
+			process.run (l_cmd)
 
-			if process.was_successful and then attached process.last_output as l_out then
+			if process.succeeded and then attached process.stdout as l_out then
 				Result := l_out.to_string_8
 				Result.prune_all ('%R')
 				Result.prune_all ('%N')
@@ -95,9 +95,9 @@ feature -- Operations
 
 			l_cmd := "powershell -Command %"[Environment]::SetEnvironmentVariable('" +
 				a_name + "', $null, 'User')%""
-			process.execute (l_cmd)
+			process.run (l_cmd)
 
-			if not process.was_successful then
+			if not process.succeeded then
 				if attached process.last_error as l_err then
 					last_error := l_err.to_string_8
 				else

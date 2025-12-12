@@ -94,8 +94,8 @@ feature -- Generation
 
 			if attached inno_compiler_path as l_iscc then
 				l_cmd := "%"" + l_iscc + "%" %"" + a_script + "%""
-				process.execute (l_cmd)
-				Result := process.was_successful
+				process.run (l_cmd)
+				Result := process.succeeded
 
 				if not Result then
 					if attached process.last_error as l_err then

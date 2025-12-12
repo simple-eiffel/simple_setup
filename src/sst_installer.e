@@ -62,8 +62,8 @@ feature -- Status
 	is_git_available: BOOLEAN
 			-- Is git available on the system?
 		do
-			process.execute ("git --version")
-			Result := process.was_successful
+			process.run ("git --version")
+			Result := process.succeeded
 		end
 
 	install_path (a_lib: SST_LIBRARY_INFO): STRING
@@ -87,9 +87,9 @@ feature -- Operations
 			else
 				-- Clone from GitHub
 				l_cmd := "git clone " + a_lib.github_url + " " + "%"" + install_path (a_lib) + "%""
-				process.execute (l_cmd)
+				process.run (l_cmd)
 
-				if process.was_successful then
+				if process.succeeded then
 					Result := True
 				else
 					if attached process.last_error as l_err then
@@ -114,9 +114,9 @@ feature -- Operations
 			else
 				-- Pull latest changes
 				l_cmd := "git -C %"" + install_path (a_lib) + "%" pull"
-				process.execute (l_cmd)
+				process.run (l_cmd)
 
-				if process.was_successful then
+				if process.succeeded then
 					Result := True
 				else
 					if attached process.last_error as l_err then
@@ -140,7 +140,7 @@ feature -- Operations
 			else
 				-- Remove directory (Windows)
 				l_cmd := "cmd /c rmdir /s /q %"" + install_path (a_lib) + "%""
-				process.execute (l_cmd)
+				process.run (l_cmd)
 				Result := not is_installed (a_lib)
 
 				if not Result then
