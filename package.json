@@ -1,0 +1,9 @@
+{
+  "name": "simple_setup",
+  "version": "0.1.0",
+  "description": "Simple Setup - Package manager and Inno Setup generator for simple_* ecosystem",
+  "author": "Larry Rix",
+  "license": "MIT",
+  "category": "tools",
+  "keywords": ["installer", "setup", "deployment"]
+}
