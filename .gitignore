@@ -1,25 +1,26 @@
-# Eiffel compilation outputs
+# Eiffel build artifacts
 EIFGENs/
-.eifgen/
+Documentation/
+
+# Compiled files
 *.melted
-*.frozen
-*.finalized
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
 
 # Backup files
 *.swp
-*~
 *.bak
+*~
+
+# IDE files
+.vscode/
+.idea/
 
 # OS files
 .DS_Store
 Thumbs.db
 
-# IDE files
-.idea/
-.vscode/
-*.iml
-
-# Logs
-*.log
-bin/*.exe
-*.rc
