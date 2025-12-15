@@ -4,6 +4,19 @@
 
 # SIMPLE_SETUP
 
+> **DEPRECATED:** This library has been superseded by **[simple_pkg](https://github.com/simple-eiffel/simple_pkg)**.
+>
+> `simple_pkg` provides a modern, GitHub-based package manager with:
+> - Dynamic package discovery from the simple-eiffel organization
+> - Automatic dependency resolution from ECF files
+> - Commands: `simple install`, `simple update`, `simple search`, `simple universe`
+> - `simple doctor` for environment diagnostics
+> - `simple tree` for dependency visualization
+>
+> **Migration:** Run the `simple-setup-1.0.0.exe` installer to get the new `simple` command.
+>
+> This repository is maintained for historical reference only.
+
 **[Documentation](https://simple-eiffel.github.io/simple_setup/)** | **[GitHub](https://github.com/simple-eiffel/simple_setup)**
 
 ### Package Manager and Windows Installer Generator for the simple_* Ecosystem
