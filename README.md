@@ -6,14 +6,24 @@
 
 > **DEPRECATED:** This library has been superseded by **[simple_pkg](https://github.com/simple-eiffel/simple_pkg)**.
 >
+> **As of December 2025**, the ecosystem uses a single environment variable:
+> ```
+> SIMPLE_EIFFEL = D:\prod  (or your install directory)
+> ```
+> All 58 individual `SIMPLE_*` environment variables are now obsolete. ECF files use the pattern:
+> ```xml
+> <library name="simple_json" location="$SIMPLE_EIFFEL/simple_json/simple_json.ecf"/>
+> ```
+>
 > `simple_pkg` provides a modern, GitHub-based package manager with:
+> - Single `SIMPLE_EIFFEL` root variable for all packages
 > - Dynamic package discovery from the simple-eiffel organization
 > - Automatic dependency resolution from ECF files
 > - Commands: `simple install`, `simple update`, `simple search`, `simple universe`
 > - `simple doctor` for environment diagnostics
 > - `simple tree` for dependency visualization
 >
-> **Migration:** Run the `simple-setup-1.0.0.exe` installer to get the new `simple` command.
+> **Migration:** Set `SIMPLE_EIFFEL` to your install directory. Individual `SIMPLE_*` vars can be removed.
 >
 > This repository is maintained for historical reference only.
 
